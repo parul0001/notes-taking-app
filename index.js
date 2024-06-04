@@ -19,4 +19,12 @@ app.get('/', (req, res) => {
     
 })
 
+app.post('/create', (req, res) => {
+    fs.writeFile(`./files/${req.body.title.split(' ').join('')}.txt`, req.body.notes, (err) => {
+        res.redirect('/')
+    })
+})
+    
+
+
 app.listen(3000);
