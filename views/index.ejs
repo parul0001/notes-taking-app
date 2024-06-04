@@ -16,19 +16,17 @@
                 </form>
             </div>
             <div class="tasks p-10 flex gap-2 flex-wrap">
-                <div class="task hidden bg-zinc-800 text-white w-80 text-3xl tracking-tighter rounded-md px-5 py-2">
+                <% if(files.length > 0) {  %>
+                <%    files.forEach((val) => { %>
+                        <div class="task bg-zinc-800 text-white w-80 text-3xl tracking-tighter rounded-md px-5 py-2">
                     <h1>Some task</h1>
                     <a class="text-blue-600 tracking-normal text-sm" href="">Read more.</a>
                 </div>
-                <div class="task hidden bg-zinc-800 text-white w-80 text-3xl tracking-tighter rounded-md px-5 py-2">
-                    <h1>Some task</h1>
-                    <a class="text-blue-600 tracking-normal text-sm" href="">Read more.</a>
-                </div>
-                <div class="task hidden bg-zinc-800 text-white w-80 text-3xl tracking-tighter rounded-md px-5 py-2">
-                    <h1>Some task</h1>
-                    <a class="text-blue-600 tracking-normal text-sm" href="">Read more.</a>
-                </div>
-                <h1 class="text-zinc-600 text-2xl">No tasks yet.</h1>
+                <%    }) %>
+                <%    } else { %>
+                        <h1 class="text-zinc-600 text-2xl">No tasks yet.</h1>
+                <%    } %>
+                 
             </div>
         </div>
     <script src="script.js"></script>
