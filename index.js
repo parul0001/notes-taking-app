@@ -24,6 +24,12 @@ app.post('/create', (req, res) => {
         res.redirect('/')
     })
 })
+
+app.get('/file/:filename', (req, res) => {
+    fs.readFile(`./files/${req.params.filename}`, 'utf-8', (err, fileData) => {
+        res.render('show', {fileData: fileData, filename: req.params.filename})
+    })
+})
     
 
 
